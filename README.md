@@ -28,7 +28,9 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 
 ## Tecnologias Utilizadas
 
+- **Biome:** Lint, formatter e parser unificado para JS/TS.
 - **Husky:** Hooks Git para validações automáticas.
 - **TypeScript:** Superset de JavaScript com tipagem estática.
+- **Ultracite:** Configurações predefinidas para o Biome.
 - **Vite:** Um servidor de desenvolvimento rápido e ferramenta de construção.
 
