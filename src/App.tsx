@@ -1,6 +1,16 @@
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './globals.css'
+import { CreateRoomPage } from './pages/create-room'
+import { RoomPage } from './pages/room'
 
 export function App() {
-	return <p>Hello world</p>
+	return (
+		<BrowserRouter>
+			<Routes>
+				<Route element={<CreateRoomPage />} index />
+				<Route element={<RoomPage />} path='/room' />
+			</Routes>
+		</BrowserRouter>
+	)
 }
 
