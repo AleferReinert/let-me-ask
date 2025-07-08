@@ -30,6 +30,7 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 
 - **Biome:** Lint, formatter e parser unificado para JS/TS.
 - **Husky:** Hooks Git para validações automáticas.
+- **Tailwind CSS:** Framework utilitário para estilização com CSS.
 - **TypeScript:** Superset de JavaScript com tipagem estática.
 - **Ultracite:** Configurações predefinidas para o Biome.
 - **Vite:** Um servidor de desenvolvimento rápido e ferramenta de construção.

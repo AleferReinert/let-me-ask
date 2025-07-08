@@ -1,4 +1,4 @@
-import './index.css'
+import './globals.css'
 
 export function App() {
 	return <p>Hello world</p>
