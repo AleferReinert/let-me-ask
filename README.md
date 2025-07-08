@@ -28,6 +28,7 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 
 ## Tecnologias Utilizadas
 
+- **Husky:** Hooks Git para validações automáticas.
 - **TypeScript:** Superset de JavaScript com tipagem estática.
 - **Vite:** Um servidor de desenvolvimento rápido e ferramenta de construção.
 
