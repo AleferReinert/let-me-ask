@@ -11,7 +11,7 @@
     "actions": {
       "source": {
         "organizeImports": "on",
-        "useSortedAttributes": "on",
+        "useSortedAttributes": "off",
         "useSortedProperties": "on"
       }
     }
@@ -20,6 +20,9 @@
     "rules": {
       "nursery": {
         "useSortedClasses": "off"
+      },
+      "performance": {
+        "noImgElement": "off"
       }
     }
   }
