@@ -7,7 +7,7 @@ export function CreateRoomPage() {
   return (
     <>
       <Header />
-      <div className="mt-16 mb-8">
+      <div className="mb-8">
         <Container>
           <PageHeader
             title="Salas recentes"
