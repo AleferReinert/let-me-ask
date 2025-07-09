@@ -37,4 +37,5 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 - **TypeScript:** Superset de JavaScript com tipagem estática.
 - **Ultracite:** Configurações predefinidas para o Biome.
 - **Vite:** Um servidor de desenvolvimento rápido e ferramenta de construção.
+- **Zod:** Validação de esquemas.
 

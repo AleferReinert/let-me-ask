@@ -1,4 +1,5 @@
 import { Container } from '../components/Container/Container'
+import { CreateRoom } from '../components/CreateRoom/CreateRoom'
 import { Header } from '../components/Header/Header'
 import { PageHeader } from '../components/PageHeader/PageHeader'
 import { RoomList } from '../components/RoomList/RoomList'
@@ -13,6 +14,7 @@ export function CreateRoomPage() {
             title="Salas recentes"
             description="Acesso rápido para as salas criadas recentemente"
           />
+          <CreateRoom />
           <RoomList />
         </Container>
       </div>
