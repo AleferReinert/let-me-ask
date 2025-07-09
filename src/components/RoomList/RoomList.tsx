@@ -20,7 +20,7 @@ export function RoomList() {
 
   return (
     <ul className="space-y-2">
-      {!isLoading &&
+      {isLoading &&
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
           <li
             key={item}
