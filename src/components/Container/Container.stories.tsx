@@ -21,7 +21,7 @@ export const Default: Story = {
   play: ({ canvas, step }) => {
     const children = canvas.getByText(/children/i)
 
-    step('Required children', () => {
+    step('Children', () => {
       expect(children).toBeVisible()
     })
   }

@@ -15,7 +15,7 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   play: async ({ canvas, step }) => {
-    await step('Required title', () => {
+    await step('Title', () => {
       const name = canvas.getByRole('heading', { level: 2 })
       expect(name).toHaveTextContent('Lorem ipsum')
     })

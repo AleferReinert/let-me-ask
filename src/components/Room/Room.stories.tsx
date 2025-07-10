@@ -9,7 +9,7 @@ const meta = {
     id: '1',
     name: 'Lorem ipsum',
     questionsCount: 10,
-    createdAt: '2025-07-09T23:22:51.806Z'
+    createdAt: new Date(Date.now() - 17 * 60 * 60 * 1000).toString()
   }
 } satisfies Meta<typeof Room>
 
@@ -28,7 +28,7 @@ export const Default: Story = {
       expect(text).toBeVisible()
     })
 
-    await step('Created at', () => {
+    await step('Formatted created at', () => {
       const text = canvas.getByText('há 17 horas')
       expect(text).toBeVisible()
     })

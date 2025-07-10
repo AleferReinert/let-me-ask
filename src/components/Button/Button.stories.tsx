@@ -20,7 +20,7 @@ export const Default: Story = {
   play: ({ canvas, step }) => {
     const button = canvas.getByRole('button')
 
-    step('Required children', () => {
+    step('Children', () => {
       expect(button).toHaveTextContent('Default button')
     })
   }

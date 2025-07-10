@@ -15,8 +15,7 @@ export function Field({
   as = 'input',
   ...props
 }: FieldProps) {
-  const commonStyles =
-    'bg-white rounded-lg border border-zinc-400 text-zinc-800 px-4 w-full transition focus:outline-none focus:border-zinc-800'
+  const commonStyles = `${errorMessage ? 'border-red-400' : 'border-zinc-400'} bg-white rounded-lg border text-zinc-800 px-4 w-full transition focus:outline-none focus:border-zinc-800`
 
   return (
     <div>
@@ -28,12 +27,14 @@ export function Field({
         <textarea
           {...(props as ComponentProps<'textarea'>)}
           id={name}
+          name={name}
           className={`${commonStyles} py-2 min-h-24`}
         />
       ) : (
         <input
           {...props}
           id={name}
+          name={name}
           type="text"
           className={`${commonStyles} h-12`}
         />
