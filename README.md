@@ -33,9 +33,10 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 - **Husky:** Hooks Git para validações automáticas.
 - **React:** Biblioteca para criação de interfaces de usuário.
 - **React Query:** Biblioteca para gerenciamento de estado assíncrono.
+- **Storybook:** Ambiente para desenvolvimento de componentes isolados.
 - **Tailwind CSS:** Framework utilitário para estilização com CSS.
+- **Testing Library:** Ferramenta para testes unitários.
 - **TypeScript:** Superset de JavaScript com tipagem estática.
 - **Ultracite:** Configurações predefinidas para o Biome.
 - **Vite:** Um servidor de desenvolvimento rápido e ferramenta de construção.
 - **Zod:** Validação de esquemas.
-
