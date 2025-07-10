@@ -1,22 +1,8 @@
-import { useQuery } from '@tanstack/react-query'
+import { useRooms } from '../../http/useRooms'
 import { Room } from '../Room/Room'
 
-type GetRoomAPIResponse = Array<{
-  id: string
-  name: string
-  questionsCount: number
-  createdAt: string
-}>
-
 export function RoomList() {
-  const { data, isLoading } = useQuery({
-    queryKey: ['get-rooms'],
-    queryFn: async () => {
-      const response = await fetch(`${import.meta.env.VITE_API_URL}/rooms`)
-      const result: GetRoomAPIResponse = await response.json()
-      return result
-    }
-  })
+  const { data, isLoading } = useRooms()
 
   return (
     <ul className="space-y-2">
