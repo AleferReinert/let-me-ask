@@ -1,27 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect } from 'storybook/test'
-import { Button } from './Button'
+import { Container } from './Container'
 
 const meta = {
-  title: 'Components/Button',
-  component: Button,
+  title: 'Components/Container',
+  component: Container,
   parameters: {
     layout: 'centered'
   }
-} satisfies Meta<typeof Button>
+} satisfies Meta<typeof Container>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    children: 'Default button'
+    children: 'Children'
   },
   play: ({ canvas, step }) => {
-    const button = canvas.getByRole('button')
+    const children = canvas.getByText('Children')
 
     step('Required children', () => {
-      expect(button).toHaveTextContent('Default button')
+      expect(children).toBeVisible()
     })
   }
 }
