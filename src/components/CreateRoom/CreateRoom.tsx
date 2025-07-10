@@ -39,9 +39,11 @@ export function CreateRoom() {
   }
 
   return (
-    <form onSubmit={handleCreateRoom} className="max-w-xs mx-auto my-10">
+    <form onSubmit={handleCreateRoom}>
       <div className="space-y-4">
-        <h3 className="font-heading text-2xl">Criar uma nova sala</h3>
+        <h3 className="font-heading text-xl text-zinc-800">
+          Criar uma nova sala
+        </h3>
         <Field
           label="Nome da sala"
           name="room"

@@ -5,7 +5,7 @@ export function RoomList() {
   const { data, isLoading } = useRooms()
 
   return (
-    <ul className="space-y-2">
+    <ul className="space-y-2 max-h-[323px] overflow-y-auto">
       {isLoading &&
         [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
           <li
