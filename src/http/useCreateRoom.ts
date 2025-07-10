@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
-type CreateRoomRequest = {
+interface CreateRoomRequest {
   name: string
   description: string
 }

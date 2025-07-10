@@ -1,4 +1,8 @@
 import { Navigate, useParams } from 'react-router-dom'
+import { Container } from '../components/Container/Container'
+import { Header } from '../components/Header/Header'
+import { PageHeader } from '../components/PageHeader/PageHeader'
+import { QuestionList } from '../components/QuestionList/QuestionList'
 
 export function RoomPage() {
   const params = useParams()
@@ -7,5 +11,13 @@ export function RoomPage() {
     return <Navigate replace to="/" />
   }
 
-  return <h1>Room</h1>
+  return (
+    <>
+      <Header />
+      <Container>
+        <PageHeader title="Room" />
+        <QuestionList roomId={params.id} />
+      </Container>
+    </>
+  )
 }

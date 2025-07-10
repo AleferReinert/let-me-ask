@@ -1,19 +1,12 @@
 import { useQuery } from '@tanstack/react-query'
-
-type GetRoomAPIResponse = Array<{
-  id: string
-  name: string
-  questionsCount: number
-  createdAt: string
-}>
+import type { RoomProps } from '../components/Room/Room'
 
 export function useRooms() {
-  return useQuery({
+  return useQuery<RoomProps[]>({
     queryKey: ['get-rooms'],
     queryFn: async () => {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/rooms`)
-      const result: GetRoomAPIResponse = await response.json()
-      return result
+      return response.json()
     }
   })
 }
