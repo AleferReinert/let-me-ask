@@ -18,25 +18,25 @@ export function Field({
   const commonStyles = `${errorMessage ? 'border-red-400' : 'border-zinc-400'} bg-white rounded-lg border text-zinc-800 px-4 w-full transition focus:outline-none focus:border-zinc-800`
 
   return (
-    <div>
+    <div data-testid="FieldComponent">
       <label htmlFor={name} className="cursor-pointer pb-1 block">
         {label} {required && <span className="text-red-500">*</span>}
       </label>
 
       {as === 'textarea' ? (
         <textarea
-          {...(props as ComponentProps<'textarea'>)}
           id={name}
           name={name}
-          className={`${commonStyles} py-2 min-h-24`}
+          className={`${commonStyles} py-2 min-h-24 resize-none`}
+          {...(props as ComponentProps<'textarea'>)}
         />
       ) : (
         <input
-          {...props}
           id={name}
           name={name}
           type="text"
           className={`${commonStyles} h-12`}
+          {...props}
         />
       )}
 
