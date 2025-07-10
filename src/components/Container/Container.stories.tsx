@@ -4,10 +4,7 @@ import { Container } from './Container'
 
 const meta = {
   title: 'Components/Container',
-  component: Container,
-  parameters: {
-    layout: 'centered'
-  }
+  component: Container
 } satisfies Meta<typeof Container>
 
 export default meta
@@ -15,10 +12,14 @@ type Story = StoryObj<typeof meta>
 
 export const Default: Story = {
   args: {
-    children: 'Children'
+    children: (
+      <div className="bg-theme-primary text-white text-center py-2">
+        Children with styles to view dimensions
+      </div>
+    )
   },
   play: ({ canvas, step }) => {
-    const children = canvas.getByText('Children')
+    const children = canvas.getByText(/children/i)
 
     step('Required children', () => {
       expect(children).toBeVisible()
