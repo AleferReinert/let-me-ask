@@ -10,7 +10,8 @@
     "prepare": "husky",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "chromatic": "npx chromatic --project-token=chpt_0b2a75be4150a80"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
@@ -34,6 +35,7 @@
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.6.0",
     "@vitest/browser": "^3.2.4",
+    "chromatic": "^13.1.2",
     "husky": "^9.1.7",
     "msw-storybook-addon": "^2.0.5",
     "playwright": "^1.54.0",
