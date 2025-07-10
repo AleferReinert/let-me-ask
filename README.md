@@ -34,6 +34,7 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 - **React:** Biblioteca para criação de interfaces de usuário.
 - **React Query:** Biblioteca para gerenciamento de estado assíncrono.
 - **Storybook:** Ambiente para desenvolvimento de componentes isolados.
+- **Storybook Test Runner:** Transforma os stories em testes executáveis.
 - **Tailwind CSS:** Framework utilitário para estilização com CSS.
 - **Testing Library:** Ferramenta para testes unitários.
 - **TypeScript:** Superset de JavaScript com tipagem estática.
