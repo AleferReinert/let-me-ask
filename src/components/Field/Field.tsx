@@ -19,7 +19,10 @@ export function Field({
 
   return (
     <div data-testid="FieldComponent">
-      <label htmlFor={name} className="cursor-pointer pb-1 block">
+      <label
+        htmlFor={name}
+        className="cursor-pointer pb-1 font-medium text-sm block"
+      >
         {label} {required && <span className="text-red-500">*</span>}
       </label>
 
