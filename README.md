@@ -31,6 +31,7 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 - **Biome:** Lint, formatter e parser unificado para JS/TS.
 - **Day.js:** Biblioteca para manipulação de datas.
 - **Husky:** Hooks Git para validações automáticas.
+- **Mock Service Worker:** Biblioteca para simulação de API.
 - **React:** Biblioteca para criação de interfaces de usuário.
 - **React Query:** Biblioteca para gerenciamento de estado assíncrono.
 - **Storybook:** Ambiente para desenvolvimento de componentes isolados.

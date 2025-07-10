@@ -1,15 +1,23 @@
 import type { Preview } from '@storybook/react-vite'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { initialize, mswLoader } from 'msw-storybook-addon'
 import { MemoryRouter } from 'react-router-dom'
 import '../src/globals.css'
 
+initialize()
+const queryClient = new QueryClient()
+
 const preview: Preview = {
-	decorators: [
+  decorators: [
     (Story) => (
-      <MemoryRouter>
-        <Story />
-      </MemoryRouter>
+      <QueryClientProvider client={queryClient}>
+        <MemoryRouter>
+          <Story />
+        </MemoryRouter>
+      </QueryClientProvider>
     )
   ],
+  loaders: [mswLoader],
   parameters: {
     controls: {
       matchers: {

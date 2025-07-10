@@ -11,6 +11,7 @@ export interface RoomProps {
 export function Room({ id, name, questionsCount, createdAt }: RoomProps) {
   return (
     <Link
+      data-testid="RoomComponent"
       to={`/room/${id}`}
       title="Entrar"
       className="p-4 bg-white text-zinc-800 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 rounded-lg transition group hover:bg-theme-primary"
