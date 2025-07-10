@@ -25,7 +25,12 @@ export function QuestionAnswer({
         </div>
         <p className="p-4  text-zinc-700 text-sm bg-zinc-100 rounded-lg relative">
           <span className="border-8 border-transparent border-r-zinc-100 absolute top-3 -left-4" />
-          {answer}
+          {answer || (
+            <div className="flex gap-2 italic">
+              <span className="size-4 animate-spin rounded-full border border-t-transparent border-zinc-700 block" />
+              Gerando resposta...
+            </div>
+          )}
         </p>
       </div>
       <div className="flex justify-end">

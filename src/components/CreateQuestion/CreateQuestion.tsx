@@ -1,13 +1,21 @@
 import { useState } from 'react'
 import z from 'zod/v4'
+import { useCreateQuestion } from '../../http/useCreateQuestion'
 import { Button } from '../Button/Button'
 import { Field } from '../Field/Field'
 
-export function CreateQuestion() {
+interface CreateQuestionProps {
+  roomId: string
+}
+
+export function CreateQuestion({ roomId }: CreateQuestionProps) {
+  const { mutateAsync: createQuestion } = useCreateQuestion(roomId)
   const [question, setQuestion] = useState('')
 
-  function handleCreateQuestion(e: React.FormEvent<HTMLFormElement>) {
+  async function handleCreateQuestion(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+
+    await createQuestion({ question })
 
     const schema = z.object({
       question: z.string().min(3, 'Mínimo de 3 caracteres')

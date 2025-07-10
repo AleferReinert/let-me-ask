@@ -5,6 +5,10 @@ interface CreateRoomRequest {
   description: string
 }
 
+interface CreateRoomResponse {
+  roomId: string
+}
+
 export function useCreateRoom() {
   const queryClient = useQueryClient()
 
@@ -16,7 +20,7 @@ export function useCreateRoom() {
         body: JSON.stringify(data)
       })
 
-      const result: { roomId: string } = await response.json()
+      const result: CreateRoomResponse = await response.json()
       return result
     },
     onSuccess: () => {

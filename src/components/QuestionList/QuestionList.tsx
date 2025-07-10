@@ -13,7 +13,7 @@ export function QuestionList({ roomId }: QuestionListProps) {
   }
 
   if (!data || data?.length === 0) {
-    return <p>Ainda não há perguntas nesta sala.</p>
+    return <p className="text-zinc-500">Ainda não há perguntas nesta sala.</p>
   }
 
   return (
