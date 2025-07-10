@@ -8,16 +8,14 @@ export function CreateRoomPage() {
   return (
     <>
       <Header />
-      <div className="mb-8">
-        <Container>
-          <PageHeader
-            title="Salas recentes"
-            description="Acesso rápido para as salas criadas recentemente"
-          />
-          <CreateRoom />
-          <RoomList />
-        </Container>
-      </div>
+      <Container>
+        <PageHeader
+          title="Salas recentes"
+          description="Acesso rápido para as salas criadas recentemente"
+        />
+        <CreateRoom />
+        <RoomList />
+      </Container>
     </>
   )
 }

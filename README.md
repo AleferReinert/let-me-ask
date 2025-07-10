@@ -37,6 +37,7 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 - **Husky:** Hooks Git para validações automáticas.
 - **Mock Service Worker:** Biblioteca para simulação de API.
 - **React:** Biblioteca para criação de interfaces de usuário.
+- **React Icons:** SVG's de pacotes de ícones populares.
 - **React Query:** Biblioteca para gerenciamento de estado assíncrono.
 - **Storybook:** Ambiente para desenvolvimento de componentes isolados.
 - **Storybook Test Runner:** Transforma os stories em testes executáveis.

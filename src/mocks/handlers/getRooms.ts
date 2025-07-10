@@ -1,9 +1,10 @@
 import { HttpResponse, http } from 'msw'
+import type { RoomProps } from '../../components/Room/Room'
 
 export const handlerGetRooms = http.get(
   `${import.meta.env.VITE_API_URL}/rooms`,
   () => {
-    return HttpResponse.json([
+    return HttpResponse.json<RoomProps[]>([
       {
         id: 'ed38b48b-c2cc-4f34-c917-c5111707daf9',
         name: 'Grebe Ltd',
