@@ -31,3 +31,7 @@
 	--font-heading: 'Poppins';
 	--font-sans: 'Roboto';
 }
+
+body {
+	@apply antialiased bg-theme-gray-100;
+}
