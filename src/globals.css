@@ -5,7 +5,7 @@
   font-family: 'Poppins';
   font-style: normal;
   font-weight: 800;
-  src: url('../fonts/poppins-v23-latin-800.woff2') format('woff2'); 
+  src: url('/fonts/poppins-v23-latin-800.woff2') format('woff2'); 
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: url('../fonts/roboto-v48-latin-regular.woff2') format('woff2');
+  src: url('/fonts/roboto-v48-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
@@ -21,7 +21,7 @@
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 500;
-  src: url('../fonts/roboto-v48-latin-500.woff2') format('woff2');
+  src: url('/fonts/roboto-v48-latin-500.woff2') format('woff2');
 }
 
 @theme {
