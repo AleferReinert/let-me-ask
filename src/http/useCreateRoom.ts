@@ -20,6 +20,10 @@ export function useCreateRoom() {
         body: JSON.stringify(data)
       })
 
+      if (!response.ok) {
+        throw new Error(`Error: failed to create room - ${response.status} ${response.statusText}`)
+      }
+
       const result: CreateRoomResponse = await response.json()
       return result
     },
