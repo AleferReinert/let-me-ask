@@ -12,7 +12,6 @@ export function CreateRoom() {
 
   async function handleCreateRoom(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    await createRoom({ name, description })
 
     const schema = z.object({
       name: z.string().min(3, 'Mínimo de 3 caracteres'),
@@ -32,6 +31,8 @@ export function CreateRoom() {
       setNameErrors(fieldErrors.name || '')
       return
     }
+
+    await createRoom({ name, description })
 
     setNameErrors('')
     setName('')
