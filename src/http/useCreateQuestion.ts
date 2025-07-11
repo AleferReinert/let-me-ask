@@ -20,6 +20,10 @@ export function useCreateQuestion(roomId: string) {
         body: JSON.stringify(data)
       })
 
+      if (!response.ok) {
+        throw new Error(`Error: failed to create question - ${response.status} ${response.statusText}`)
+      }
+
       const result: CreateQuestionResponse = await response.json()
       return result
     },

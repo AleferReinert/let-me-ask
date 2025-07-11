@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import z from 'zod/v4'
 import { useCreateQuestion } from '../../http/useCreateQuestion'
+import { Alert } from '../Alert/Alert'
 import { Button } from '../Button/Button'
 import { Field } from '../Field/Field'
 
@@ -12,6 +13,7 @@ export function CreateQuestion({ roomId }: CreateQuestionProps) {
   const { mutateAsync: createQuestion, isPending } = useCreateQuestion(roomId)
   const [question, setQuestion] = useState('')
   const [errors, setErrors] = useState('')
+  const [alertError, setAlertError] = useState('')
 
   async function handleCreateQuestion(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -28,9 +30,14 @@ export function CreateQuestion({ roomId }: CreateQuestionProps) {
       return
     }
 
-    await createQuestion({ question })
-    setQuestion('')
-    setErrors('')
+    try {
+      await createQuestion({ question })
+      setQuestion('')
+      setErrors('')
+      setAlertError('')
+    } catch {
+      setAlertError('Erro ao criar a pergunta.')
+    }
   }
 
   return (
@@ -48,8 +55,9 @@ export function CreateQuestion({ roomId }: CreateQuestionProps) {
           as="textarea"
           required
           placeholder="O que você gostaria de saber?"
-          errorMessage={isPending ? undefined : errors}
+          errorMessage={errors}
         />
+        {alertError && <Alert variant="error">{alertError}</Alert>}
         <Button className="w-full" disabled={isPending}>
           {isPending ? 'Enviando...' : 'Enviar pergunta'}
         </Button>
