@@ -8,17 +8,11 @@ export interface QuestionAnswerProps {
   createdAt: string
 }
 
-export function QuestionAnswer({
-  question,
-  answer,
-  createdAt
-}: QuestionAnswerProps) {
+export function QuestionAnswer({ question, answer, createdAt }: QuestionAnswerProps) {
   return (
-    <div
-      data-testid="QuestionAnswerComponent"
-      className="p-6 bg-white rounded-lg space-y-3"
-    >
+    <div data-testid="QuestionAnswerComponent" className="p-6 bg-white rounded-lg space-y-3">
       <h3>{question}</h3>
+
       <div className="flex gap-4">
         <div className="rounded-full p-1.5 bg-theme-primary inline-block text-white size-fit">
           <VscRobot className="size-5" aria-hidden />
@@ -35,6 +29,7 @@ export function QuestionAnswer({
           </p>
         </div>
       </div>
+
       <div className="flex justify-end">
         <p className="text-sm text-zinc-500">{dayjs(createdAt).fromNow()}</p>
       </div>

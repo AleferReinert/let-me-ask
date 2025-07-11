@@ -11,30 +11,20 @@ export function PageHeader({ title, description }: PageHeaderProps) {
   const isHome = useLocation().pathname === '/'
 
   return (
-    <div className="mt-8 mb-6 lg:mt-14 lg:mb-10">
+    <div className="mb-6 lg:mb-10">
       <div className="flex justify-between items-center mb-2">
         {!isHome && (
-          <Link
-            to="/"
-            className="focus:outline-none text-zinc-500 text-sm flex gap-1 hover:underline"
-          >
+          <Link to="/" className="focus:outline-none text-zinc-500 text-sm flex gap-1 hover:underline">
             <VscArrowLeft className="size-4 transition" aria-hidden />
             Voltar ao início
           </Link>
         )}
-        <Button
-          as="link"
-          size="small"
-          to="/"
-          className="focus:outline-none ml-auto"
-        >
+        <Button as="link" size="small" to="/" className="focus:outline-none ml-auto">
           <VscRecord className="size-4 transition" aria-hidden />
           Gravar áudio
         </Button>
       </div>
-      <h2 className="text-zinc-800 text-2xl font-heading font-extrabold">
-        {title}
-      </h2>
+      <h2 className="text-zinc-800 text-2xl font-heading font-extrabold">{title}</h2>
       {description && <p className="text-zinc-500">{description}</p>}
     </div>
   )
