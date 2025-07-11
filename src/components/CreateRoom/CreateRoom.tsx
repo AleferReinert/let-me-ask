@@ -5,7 +5,7 @@ import { Button } from '../Button/Button'
 import { Field } from '../Field/Field'
 
 export function CreateRoom() {
-  const { mutateAsync: createRoom } = useCreateRoom()
+  const { mutateAsync: createRoom, isPending } = useCreateRoom()
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
   const [nameErrors, setNameErrors] = useState('')
@@ -49,7 +49,7 @@ export function CreateRoom() {
         <Field
           label="Nome da sala"
           name="room"
-          errorMessage={nameErrors}
+          errorMessage={isPending ? undefined : nameErrors}
           onChange={(e) => setName(e.target.value)}
           value={name}
           required
@@ -61,7 +61,9 @@ export function CreateRoom() {
           value={description}
           as="textarea"
         />
-        <Button className="w-full">Criar sala</Button>
+        <Button className="w-full" disabled={isPending}>
+          {isPending ? 'Criando...' : 'Criar sala'}
+        </Button>
       </div>
     </form>
   )
