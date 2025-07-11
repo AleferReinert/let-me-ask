@@ -11,7 +11,7 @@ type ButtonProps =
   | (CommonProps & { as: 'link' } & LinkProps)
 
 const button = tv({
-  base: 'bg-theme-primary text-white rounded-lg justify-center cursor-pointer flex items-center gap-2 disabled:cursor-not-allowed disabled:opacity-85',
+  base: 'bg-theme-primary text-white rounded-lg justify-center cursor-pointer flex items-center gap-2 disabled:cursor-not-allowed disabled:opacity-85 focus:outline-none',
   variants: {
     size: {
       default: 'h-12 px-4',
