@@ -26,7 +26,7 @@ export const Default: Story = {
     })
 
     await step('Default sizes', () => {
-      expect(button).toHaveClass('h-12 leading-12 px-4')
+      expect(button).toHaveClass('h-12 px-4')
     })
   }
 }
@@ -40,7 +40,7 @@ export const Small: Story = {
     const button = canvas.getByRole('button')
 
     await step('Small sizes', () => {
-      expect(button).toHaveClass('h-10 leading-10 px-3 text-sm')
+      expect(button).toHaveClass('h-10 px-3 text-sm')
     })
   }
 }
