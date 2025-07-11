@@ -8,7 +8,7 @@ interface FieldProps extends ComponentProps<'input'> {
 }
 
 export function Field({ label, name, required, errorMessage, as = 'input', ...props }: FieldProps) {
-  const commonStyles = `${errorMessage ? 'border-red-700' : 'border-zinc-400'} bg-white rounded-lg border text-zinc-800 px-4 w-full transition focus:outline-none focus:border-zinc-800`
+  const commonStyles = `${errorMessage ? 'border-red-700' : 'border-zinc-400'} leading-normal bg-white rounded-lg border text-zinc-800 px-4 w-full transition focus:outline-none focus:border-zinc-800`
 
   return (
     <div data-testid="FieldComponent" className="leading-0">
