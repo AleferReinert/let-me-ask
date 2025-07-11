@@ -1,10 +1,10 @@
 import { HttpResponse, http } from 'msw'
-import type { RoomQuestionProps } from '../../http/useRoomQuestions'
+import type { QuestionAnswerProps } from '../../components/QuestionAnswer/QuestionAnswer'
 
 export const handlerGetRoomQuestions = http.get(
   `${import.meta.env.VITE_API_URL}/rooms/ed38b48b-c2cc-4f34-c917-c5111707daf9/questions`,
   () => {
-    return HttpResponse.json<RoomQuestionProps[]>([
+    return HttpResponse.json<QuestionAnswerProps[]>([
       {
         id: '1348fe0e-08d5-4cab-bf4c-5eb69dcde768',
         question: 'Sed eget accumsan felis, viverra euismod nulla. ',

@@ -4,7 +4,10 @@ import { CreateQuestion } from './CreateQuestion'
 
 const meta = {
   title: 'Components/CreateQuestion',
-  component: CreateQuestion
+  component: CreateQuestion,
+  args: {
+    roomId: '1'
+  }
 } satisfies Meta<typeof CreateQuestion>
 
 export default meta
