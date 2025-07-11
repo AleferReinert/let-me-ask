@@ -37,7 +37,7 @@ export const WithError: Story = {
   play: async ({ canvas, step }) => {
     await step('Border red', () => {
       const input = canvas.getByRole('textbox')
-      expect(input).toHaveClass('border-red-400')
+      expect(input).toHaveClass('border-red-700')
     })
 
     await step('Error message', () => {

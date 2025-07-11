@@ -7,23 +7,13 @@ interface FieldProps extends ComponentProps<'input'> {
   as?: 'input' | 'textarea'
 }
 
-export function Field({
-  label,
-  name,
-  required,
-  errorMessage,
-  as = 'input',
-  ...props
-}: FieldProps) {
-  const commonStyles = `${errorMessage ? 'border-red-400' : 'border-zinc-400'} bg-white rounded-lg border text-zinc-800 px-4 w-full transition focus:outline-none focus:border-zinc-800`
+export function Field({ label, name, required, errorMessage, as = 'input', ...props }: FieldProps) {
+  const commonStyles = `${errorMessage ? 'border-red-700' : 'border-zinc-400'} bg-white rounded-lg border text-zinc-800 px-4 w-full transition focus:outline-none focus:border-zinc-800`
 
   return (
-    <div data-testid="FieldComponent">
-      <label
-        htmlFor={name}
-        className="cursor-pointer pb-1 font-medium text-sm block"
-      >
-        {label} {required && <span className="text-red-500">*</span>}
+    <div data-testid="FieldComponent" className="leading-0">
+      <label htmlFor={name} className="cursor-pointer pb-1 font-medium text-sm block">
+        {label} {required && <span className="text-red-700">*</span>}
       </label>
 
       {as === 'textarea' ? (
@@ -34,18 +24,10 @@ export function Field({
           {...(props as ComponentProps<'textarea'>)}
         />
       ) : (
-        <input
-          id={name}
-          name={name}
-          type="text"
-          className={`${commonStyles} h-12`}
-          {...props}
-        />
+        <input id={name} name={name} type="text" className={`${commonStyles} h-12`} {...props} />
       )}
 
-      {errorMessage && (
-        <span className="text-red-500 text-sm">{errorMessage}</span>
-      )}
+      {errorMessage && <span className="text-red-700 text-sm block mt-1">{errorMessage}</span>}
     </div>
   )
 }
