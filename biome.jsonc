@@ -5,7 +5,7 @@
     "formatter": {
       "semicolons": "asNeeded",
       "trailingCommas": "none",
-      "lineWidth": 100
+      "lineWidth": 120
     }
   },
   "assist": {

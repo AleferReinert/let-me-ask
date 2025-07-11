@@ -40,6 +40,7 @@ export function CreateRoom() {
       setNameErrors('')
       setName('')
       setDescription('')
+      setAlertError('')
     } catch {
       setAlertError('Erro ao criar a sala.')
     }
