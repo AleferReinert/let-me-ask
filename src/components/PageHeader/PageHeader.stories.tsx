@@ -29,9 +29,19 @@ export const WithDescription: Story = {
   play: async ({ canvas, step }) => {
     await step('Description', () => {
       const description = canvas.getByRole('paragraph')
-      expect(description).toHaveTextContent(
-        'Dolor sit amet consectetur adipiscing.'
-      )
+      expect(description).toHaveTextContent('Dolor sit amet consectetur adipiscing.')
+    })
+  }
+}
+
+export const WithRecordAudioLink: Story = {
+  args: {
+    recordAudioLink: '/record-link'
+  },
+  play: async ({ canvas, step }) => {
+    await step('Description', () => {
+      const link = canvas.getByRole('link', { name: 'Gravar áudio' })
+      expect(link).toHaveAttribute('href', '/record-link')
     })
   }
 }

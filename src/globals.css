@@ -33,5 +33,5 @@
 }
 
 body {
-	@apply antialiased bg-theme-gray-100 pb-8;
+	@apply antialiased bg-theme-gray-100;
 }

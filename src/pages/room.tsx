@@ -13,7 +13,7 @@ export function RoomPage() {
 
   return (
     <Layout>
-      <PageHeader title="Room" />
+      <PageHeader title="Sala de perguntas" recordAudioLink={`/room/${params.id}/audio`} />
       <CreateQuestion roomId={params.id} />
       <QuestionList roomId={params.id} />
     </Layout>

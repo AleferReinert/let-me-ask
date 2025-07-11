@@ -5,9 +5,10 @@ import { Button } from '../Button/Button'
 interface PageHeaderProps {
   title: React.ReactNode
   description?: string
+  recordAudioLink?: string
 }
 
-export function PageHeader({ title, description }: PageHeaderProps) {
+export function PageHeader({ title, description, recordAudioLink }: PageHeaderProps) {
   const isHome = useLocation().pathname === '/'
 
   return (
@@ -19,10 +20,12 @@ export function PageHeader({ title, description }: PageHeaderProps) {
             Voltar ao início
           </Link>
         )}
-        <Button as="link" size="small" to="/" className="focus:outline-none ml-auto">
-          <VscRecord className="size-4 transition" aria-hidden />
-          Gravar áudio
-        </Button>
+        {recordAudioLink && (
+          <Button as="link" size="small" to={recordAudioLink} className="focus:outline-none ml-auto">
+            <VscRecord className="size-4 transition" aria-hidden />
+            Gravar áudio
+          </Button>
+        )}
       </div>
       <h2 className="text-zinc-800 text-2xl font-heading font-extrabold">{title}</h2>
       {description && <p className="text-zinc-500">{description}</p>}

@@ -9,7 +9,7 @@ export function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header />
-      <Container className="mt-8 lg:mt-14">{children}</Container>
+      <Container className="pt-8 lg:pt-14 pb-8">{children}</Container>
     </>
   )
 }
