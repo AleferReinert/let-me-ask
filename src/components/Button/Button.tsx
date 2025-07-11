@@ -19,7 +19,7 @@ export function Button({
   const sizeDefault = 'h-12 leading-12 px-4'
   const sizeSmall = 'h-10 leading-10 px-3 text-sm'
   const common =
-    'bg-theme-primary text-white rounded-lg justify-center cursor-pointer flex items-center gap-2'
+    'bg-theme-primary text-white rounded-lg justify-center cursor-pointer flex items-center gap-2 disabled:cursor-not-allowed disabled:opacity-85'
   const style = `${className ?? ''}  ${size === 'default' ? sizeDefault : sizeSmall} ${common}`
   return as === 'button' ? (
     <button {...(props as ComponentProps<'button'>)} className={style}>

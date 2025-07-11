@@ -60,6 +60,24 @@ export const AsLink: Story = {
   }
 }
 
+export const Disabled: Story = {
+  args: {
+    children: 'Disabled button',
+    disabled: true
+  },
+  play: async ({ canvas, step }) => {
+    const button = canvas.getByRole('button')
+
+    await step('Disabled', () => {
+      expect(button).toBeDisabled()
+    })
+
+    await step('Styles', () => {
+      expect(button).toHaveClass('disabled:cursor-not-allowed')
+    })
+  }
+}
+
 export const WithIcon: Story = {
   args: {
     children: (

@@ -28,6 +28,7 @@ export function CreateRoom() {
           fieldErrors[path] = issue.message
         }
       }
+
       setNameErrors(fieldErrors.name || '')
       return
     }
