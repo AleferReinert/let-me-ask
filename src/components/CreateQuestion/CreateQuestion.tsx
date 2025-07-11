@@ -19,7 +19,7 @@ export function CreateQuestion({ roomId }: CreateQuestionProps) {
     e.preventDefault()
 
     const schema = z.object({
-      question: z.string().min(3, 'Mínimo de 3 caracteres')
+      question: z.string().min(10, 'Mínimo de 10 caracteres')
     })
 
     const result = schema.safeParse({ question })
