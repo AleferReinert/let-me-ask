@@ -1,17 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect } from 'storybook/test'
-import { Room } from './Room'
+import { RoomItem } from './RoomItem'
 
 const meta = {
-  title: 'Components/Room',
-  component: Room,
+  title: 'Components/RoomItem',
+  component: RoomItem,
   args: {
     id: '1',
     name: 'Lorem ipsum',
     questionsCount: 10,
     createdAt: new Date(Date.now() - 17 * 60 * 60 * 1000).toString()
   }
-} satisfies Meta<typeof Room>
+} satisfies Meta<typeof RoomItem>
 
 export default meta
 type Story = StoryObj<typeof meta>

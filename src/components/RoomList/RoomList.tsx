@@ -1,5 +1,5 @@
 import { useRooms } from '../../http/useRooms'
-import { Room } from '../Room/Room'
+import { RoomItem } from '../RoomItem/RoomItem'
 
 export function RoomList() {
   const { data, isLoading } = useRooms()
@@ -22,12 +22,7 @@ export function RoomList() {
 
       {data?.map((room) => (
         <li key={room.id}>
-          <Room
-            id={room.id}
-            name={room.name}
-            questionsCount={room.questionsCount}
-            createdAt={room.createdAt}
-          />
+          <RoomItem id={room.id} name={room.name} questionsCount={room.questionsCount} createdAt={room.createdAt} />
         </li>
       ))}
     </ul>

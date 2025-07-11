@@ -19,7 +19,7 @@ type Story = StoryObj<typeof meta>
 export const Default: Story = {
   play: async ({ canvas, step }) => {
     await step('Room list', async () => {
-      const rooms = await canvas.findAllByTestId('RoomComponent')
+      const rooms = await canvas.findAllByTestId('RoomItemComponent')
       expect(rooms.length).toBeGreaterThan(1)
       expect(canvas.getByRole('list')).toBeVisible()
     })
