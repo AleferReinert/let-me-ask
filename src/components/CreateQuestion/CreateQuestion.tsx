@@ -9,13 +9,12 @@ interface CreateQuestionProps {
 }
 
 export function CreateQuestion({ roomId }: CreateQuestionProps) {
-  const { mutateAsync: createQuestion } = useCreateQuestion(roomId)
+  const { mutateAsync: createQuestion, isPending } = useCreateQuestion(roomId)
   const [question, setQuestion] = useState('')
+  const [errors, setErrors] = useState('')
 
   async function handleCreateQuestion(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-
-    await createQuestion({ question })
 
     const schema = z.object({
       question: z.string().min(3, 'Mínimo de 3 caracteres')
@@ -24,17 +23,14 @@ export function CreateQuestion({ roomId }: CreateQuestionProps) {
     const result = schema.safeParse({ question })
 
     if (!result.success) {
-      const fieldErrors: Record<string, string> = {}
-      for (const issue of result.error.issues) {
-        const path = issue.path[0]
-        if (typeof path === 'string') {
-          fieldErrors[path] = issue.message
-        }
-      }
+      const error = result.error.issues[0].message
+      setErrors(error || '')
       return
     }
 
+    await createQuestion({ question })
     setQuestion('')
+    setErrors('')
   }
 
   return (
@@ -52,8 +48,11 @@ export function CreateQuestion({ roomId }: CreateQuestionProps) {
           as="textarea"
           required
           placeholder="O que você gostaria de saber?"
+          errorMessage={isPending ? undefined : errors}
         />
-        <Button className="w-full">Enviar pergunta</Button>
+        <Button className="w-full" disabled={isPending}>
+          {isPending ? 'Enviando...' : 'Enviar pergunta'}
+        </Button>
       </div>
     </form>
   )
