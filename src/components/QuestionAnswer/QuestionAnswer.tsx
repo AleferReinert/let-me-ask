@@ -23,15 +23,17 @@ export function QuestionAnswer({
         <div className="rounded-full p-1.5 bg-theme-primary inline-block text-white size-fit">
           <VscRobot className="size-5" aria-hidden />
         </div>
-        <p className="p-4  text-zinc-700 text-sm bg-zinc-100 rounded-lg relative">
+        <div className="p-4  text-zinc-700 text-sm bg-zinc-100 rounded-lg relative">
           <span className="border-8 border-transparent border-r-zinc-100 absolute top-3 -left-4" />
-          {answer || (
-            <div className="flex gap-2 italic">
-              <span className="size-4 animate-spin rounded-full border border-t-transparent border-zinc-700 block" />
-              Gerando resposta...
-            </div>
-          )}
-        </p>
+          <p>
+            {answer || (
+              <span className="flex gap-2 italic">
+                <span className="size-4 animate-spin rounded-full border border-t-transparent border-zinc-700 block" />
+                Gerando resposta...
+              </span>
+            )}
+          </p>
+        </div>
       </div>
       <div className="flex justify-end">
         <p className="text-sm text-zinc-500">{dayjs(createdAt).fromNow()}</p>
