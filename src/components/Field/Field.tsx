@@ -7,7 +7,7 @@ interface FieldProps extends ComponentProps<'input'> {
   as?: 'input' | 'textarea'
 }
 
-export function Field({ label, name, required, errorMessage, as = 'input', ...props }: FieldProps) {
+export function Field({ label, name, required, errorMessage, as = 'input', ...rest }: FieldProps) {
   const commonStyles = `${errorMessage ? 'border-red-700' : 'border-zinc-400'} leading-normal bg-white rounded-lg border text-zinc-800 px-4 w-full transition focus:outline-none focus:border-zinc-800`
 
   return (
@@ -21,10 +21,10 @@ export function Field({ label, name, required, errorMessage, as = 'input', ...pr
           id={name}
           name={name}
           className={`${commonStyles} py-2 min-h-24 resize-none`}
-          {...(props as ComponentProps<'textarea'>)}
+          {...(rest as ComponentProps<'textarea'>)}
         />
       ) : (
-        <input id={name} name={name} type="text" className={`${commonStyles} h-12`} {...props} />
+        <input id={name} name={name} type="text" className={`${commonStyles} h-12`} {...rest} />
       )}
 
       {errorMessage && <span className="text-red-700 text-sm block mt-1">{errorMessage}</span>}

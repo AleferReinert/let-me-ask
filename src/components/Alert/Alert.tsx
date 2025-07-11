@@ -18,11 +18,11 @@ const alert = tv({
   }
 })
 
-export const Alert = ({ variant = 'error', children, className, ...props }: AlertProps) => {
+export const Alert = ({ variant = 'error', children, className, ...rest }: AlertProps) => {
   const classNames = alert({ variant, className })
 
   return (
-    <div role="alert" className={classNames} {...props}>
+    <div role="alert" className={classNames} {...rest}>
       {children}
     </div>
   )

@@ -20,15 +20,15 @@ const button = tv({
   }
 })
 
-export function Button({ children, as = 'button', className, size = 'default', ...props }: ButtonProps) {
+export function Button({ children, as = 'button', className, size = 'default', ...rest }: ButtonProps) {
   const classNames = button({ size, className })
 
   return as === 'button' ? (
-    <button {...(props as ComponentProps<'button'>)} className={classNames}>
+    <button {...(rest as ComponentProps<'button'>)} className={classNames}>
       {children}
     </button>
   ) : (
-    <Link {...(props as LinkProps)} className={classNames}>
+    <Link {...(rest as LinkProps)} className={classNames}>
       {children}
     </Link>
   )
