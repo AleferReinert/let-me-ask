@@ -8,15 +8,16 @@ import { RoomPage } from './pages/room'
 const queryClient = new QueryClient()
 
 export function App() {
-  return (
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<CreateRoomPage />} index />
-          <Route element={<RoomPage />} path="/room/:id" />
-          <Route element={<RecordRoomAudioPage />} path="/room/:roomId/audio" />
-        </Routes>
-      </BrowserRouter>
-    </QueryClientProvider>
-  )
+	return (
+		<QueryClientProvider client={queryClient}>
+			<BrowserRouter>
+				<Routes>
+					<Route element={<CreateRoomPage />} index />
+					<Route element={<RoomPage />} path='/room/:roomId' />
+					<Route element={<RecordRoomAudioPage />} path='/room/:roomId/audio' />
+				</Routes>
+			</BrowserRouter>
+		</QueryClientProvider>
+	)
 }
+

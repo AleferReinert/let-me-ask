@@ -1,6 +1,7 @@
 import { Navigate, useParams } from 'react-router-dom'
 import { Alert } from '../components/Alert/Alert'
 import { Button } from '../components/Button/Button'
+import { GoBackLink } from '../components/GoBackLink/GoBackLink'
 import { Layout } from '../components/Layout/Layout'
 import { PageHeader } from '../components/PageHeader/PageHeader'
 import { useRecorder } from '../http/useRecorder'
@@ -19,6 +20,7 @@ export function RecordRoomAudioPage() {
 
 	return (
 		<Layout>
+			<GoBackLink />
 			<PageHeader title={`Sala ${room.name}`} description={room.description} />
 			{alertError && <Alert variant='error'>{alertError}</Alert>}
 
