@@ -1,5 +1,6 @@
 import { VscRecord } from 'react-icons/vsc'
 import { Navigate, useParams } from 'react-router-dom'
+import { Badge } from '../components/Badge/Badge'
 import { Button } from '../components/Button/Button'
 import { CreateQuestion } from '../components/CreateQuestion/CreateQuestion'
 import { GoBackLink } from '../components/GoBackLink/GoBackLink'
@@ -19,9 +20,21 @@ export function RoomPage() {
 	return (
 		<Layout>
 			<GoBackLink />
-			<div className='flex justify-between [&>div]:mb-0 lg:mb-10 items-center'>
-				<PageHeader title={`Sala ${room.name}`} description={room.description} />
-				<Button as='link' size='small' to={`/room/${roomId}/audio`} className='focus:outline-none ml-auto'>
+			<div className='flex flex-col md:flex-row gap-4 justify-between [&>div]:mb-0 lg:mb-10'>
+				<PageHeader
+					title={
+						<>
+							Sala {room.name} <Badge questionsCount={room.questionsCount} />
+						</>
+					}
+					description={room.description}
+				/>
+				<Button
+					as='link'
+					size='small'
+					to={`/room/${roomId}/audio`}
+					className='w-full sm:w-auto focus:outline-none ml-auto'
+				>
 					<VscRecord className='size-4 transition' aria-hidden />
 					Gravar áudio
 				</Button>

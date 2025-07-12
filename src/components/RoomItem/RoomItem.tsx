@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { dayjs } from '../../lib/dayjs'
+import { Badge } from '../Badge/Badge'
 
 export interface RoomItemProps {
 	id: string
@@ -10,16 +11,6 @@ export interface RoomItemProps {
 }
 
 export function RoomItem({ id, name, questionsCount, createdAt }: RoomItemProps) {
-	function getQuestionsLabel() {
-		if (questionsCount === 0) {
-			return 'Sem perguntas'
-		}
-		if (questionsCount === 1) {
-			return '1 pergunta'
-		}
-		return `${questionsCount} perguntas`
-	}
-
 	return (
 		<Link
 			data-testid='RoomItemComponent'
@@ -29,9 +20,7 @@ export function RoomItem({ id, name, questionsCount, createdAt }: RoomItemProps)
 		>
 			<h3 className='font-medium text-lg group-hover:text-white'>{name}</h3>
 			<div className='flex items-center flex-1'>
-				<p className='text-xs text-white bg-theme-secondary font-medium rounded-[50px] py-1.5 px-3'>
-					{getQuestionsLabel()}
-				</p>
+				<Badge questionsCount={questionsCount} />
 				<p className='ml-auto text-sm transition group-hover:text-white'>{dayjs(createdAt).fromNow()}</p>
 			</div>
 		</Link>
