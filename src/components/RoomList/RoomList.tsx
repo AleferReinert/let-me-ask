@@ -4,7 +4,7 @@ import { RoomItem } from '../RoomItem/RoomItem'
 
 export function RoomList() {
 	const { data, isLoading } = useRooms()
-	console.log(data)
+
 	return (
 		<ul className='space-y-2 lg:max-h-[323px] overflow-y-auto'>
 			{isLoading &&
@@ -24,7 +24,7 @@ export function RoomList() {
 			{data?.length ? (
 				data.map(room => (
 					<li key={room.id}>
-						<RoomItem id={room.id} name={room.name} questionsCount={room.questionsCount} createdAt={room.createdAt} />
+						<RoomItem {...room} />
 					</li>
 				))
 			) : (

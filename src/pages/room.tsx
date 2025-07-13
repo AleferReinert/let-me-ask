@@ -20,7 +20,7 @@ export function RoomPage() {
 	return (
 		<Layout>
 			<GoBackLink />
-			<div className='flex flex-col md:flex-row gap-4 justify-between [&>div]:mb-0 lg:mb-10'>
+			<div className='flex flex-col md:flex-row gap-4 justify-between [&>div]:mb-0 lg:mb-8'>
 				<PageHeader
 					title={
 						<>

@@ -10,18 +10,21 @@ export interface RoomItemProps {
 	createdAt: string
 }
 
-export function RoomItem({ id, name, questionsCount, createdAt }: RoomItemProps) {
+export function RoomItem({ id, name, description, questionsCount, createdAt }: RoomItemProps) {
 	return (
 		<Link
 			data-testid='RoomItemComponent'
 			to={`/room/${id}`}
 			title='Entrar'
-			className='p-4 bg-white text-zinc-800 flex flex-col gap-2 rounded-lg transition group hover:bg-theme-primary-500'
+			className='p-4 bg-white flex flex-col gap-2 rounded-lg transition group hover:bg-theme-primary-500'
 		>
-			<h3 className='font-medium text-lg group-hover:text-white'>{name}</h3>
-			<div className='flex items-center flex-1'>
+			<h3 className='font-medium text-zinc-800 flex gap-4 text-lg group-hover:text-white'>
+				{name}
 				<Badge questionsCount={questionsCount} />
-				<p className='ml-auto text-sm transition group-hover:text-white'>{dayjs(createdAt).fromNow()}</p>
+			</h3>
+			<p className='text-sm text-zinc-500 group-hover:text-white'>{description}</p>
+			<div className='flex items-center flex-1'>
+				<p className='ml-auto text-zinc-500 text-sm transition group-hover:text-white'>{dayjs(createdAt).fromNow()}</p>
 			</div>
 		</Link>
 	)
