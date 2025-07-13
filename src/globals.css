@@ -1,33 +1,42 @@
 @import 'tailwindcss';
 
 @font-face {
-  font-display: swap; 
-  font-family: 'Poppins';
-  font-style: normal;
-  font-weight: 800;
-  src: url('/fonts/poppins-v23-latin-800.woff2') format('woff2'); 
+	font-display: swap;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 800;
+	src: url('/fonts/poppins-v23-latin-800.woff2') format('woff2');
 }
 
 @font-face {
-  font-display: swap;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: url('/fonts/roboto-v48-latin-regular.woff2') format('woff2');
+	font-display: swap;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 400;
+	src: url('/fonts/roboto-v48-latin-regular.woff2') format('woff2');
 }
 
 @font-face {
-  font-display: swap;
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 500;
-  src: url('/fonts/roboto-v48-latin-500.woff2') format('woff2');
+	font-display: swap;
+	font-family: 'Roboto';
+	font-style: normal;
+	font-weight: 500;
+	src: url('/fonts/roboto-v48-latin-500.woff2') format('woff2');
 }
 
 @theme {
-  --color-theme-primary: #8056FC;
-  --color-theme-secondary: #E559F9;
-  --color-theme-gray-100: #f8f8f8;
+	--color-theme-primary-50: #f4f1fe;
+	--color-theme-primary-100: #e4dbfe;
+	--color-theme-primary-200: #c7b7fd;
+	--color-theme-primary-300: #aa92fb;
+	--color-theme-primary-400: #8d6efb;
+	--color-theme-primary-500: #8056fc; /* cor base */
+	--color-theme-primary-600: #683edf;
+	--color-theme-primary-700: #5231b1;
+	--color-theme-primary-800: #3e2685;
+	--color-theme-primary-900: #2b1a5a;
+	--color-theme-secondary: #e559f9;
+	--color-theme-gray-100: #f8f8f8;
 	--font-heading: 'Poppins';
 	--font-sans: 'Roboto';
 }

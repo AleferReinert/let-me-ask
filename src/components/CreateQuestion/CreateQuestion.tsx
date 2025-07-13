@@ -44,7 +44,7 @@ export function CreateQuestion({ roomId }: CreateQuestionProps) {
 		<form onSubmit={handleCreateQuestion} className='max-w-xs mx-auto my-10'>
 			<div className='space-y-4'>
 				<div>
-					<h3 className='font-heading text-2xl'>Fazer uma pergunta</h3>
+					<h3 className='font-heading text-lg'>Fazer uma pergunta</h3>
 					<p className='text-zinc-500'>Receba uma resposta gerada por IA</p>
 				</div>
 				<Field

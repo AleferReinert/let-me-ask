@@ -27,7 +27,7 @@ export function RecordRoomAudioPage() {
 			{isRecordSupportedByBrowser && (
 				<div className='flex justify-center'>
 					<div className='flex flex-col gap-7 items-center'>
-						<h2 className='text-theme-primary'>{status}</h2>
+						<h2 className='text-theme-primary-500'>{status}</h2>
 
 						{isRecording ? (
 							<Button onClick={stopRecording}>Pausar</Button>

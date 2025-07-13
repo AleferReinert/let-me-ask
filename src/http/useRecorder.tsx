@@ -49,7 +49,7 @@ export function useRecorder() {
 					<div className='flex gap-4 items-center'>
 						<VscRecord
 							aria-hidden
-							className='size-10 scale-[400%] fixed left-1/2 top-1/2 -ml-5 -mt-5 pointer-events-none opacity-5 text-theme-primary animate-ping'
+							className='size-10 scale-[400%] fixed left-1/2 top-1/2 -ml-5 -mt-5 pointer-events-none opacity-5 text-theme-primary-500 animate-ping'
 						/>
 						<span className='ml-1'>Gravando...</span>
 					</div>

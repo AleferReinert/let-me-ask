@@ -16,7 +16,7 @@ export function QuestionAnswer({ question, answer, createdAt, isGeneratingAnswer
 
 			{(answer || isGeneratingAnswer) && (
 				<div className='flex gap-4'>
-					<div className='rounded-full p-1.5 bg-theme-primary inline-block text-white size-fit'>
+					<div className='rounded-full p-1.5 bg-theme-primary-500 inline-block text-white size-fit'>
 						<VscRobot className='size-5' aria-hidden />
 					</div>
 					<div className='p-4  text-zinc-700 text-sm bg-zinc-100 rounded-lg relative'>

@@ -16,7 +16,7 @@ export function RoomItem({ id, name, questionsCount, createdAt }: RoomItemProps)
 			data-testid='RoomItemComponent'
 			to={`/room/${id}`}
 			title='Entrar'
-			className='p-4 bg-white text-zinc-800 flex flex-col gap-2 rounded-lg transition group hover:bg-theme-primary'
+			className='p-4 bg-white text-zinc-800 flex flex-col gap-2 rounded-lg transition group hover:bg-theme-primary-500'
 		>
 			<h3 className='font-medium text-lg group-hover:text-white'>{name}</h3>
 			<div className='flex items-center flex-1'>
