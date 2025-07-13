@@ -1,10 +1,18 @@
 # Let Me Ask
 
+Gerenciamento de salas utilizando IA.
+
+- Criação de salas
+- Gravação de áudio com transcrição
+- Faça perguntas e receba respostas geradas por IA com base no áudio gravado da sala
+
+[Layout de referência](https://www.figma.com/design/iun0C7n5fYVBdgq2zgffPs/Letmeask--Community-?node-id=45-3279&t=mBAOyXspefrIN1Ry-0) | [Storybook](https://main--68700d12fd56a60965c0891e.chromatic.com)
+
+---
+
 Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Rocketseat).
 
-- [Guia do evento](https://efficient-sloth-d85.notion.site/NLW-Agents-Guia-do-evento-21b395da57708061b24cc1aa48c0fb3a)
-- [Layout](https://www.figma.com/design/iun0C7n5fYVBdgq2zgffPs/Letmeask--Community-?node-id=45-3279&t=mBAOyXspefrIN1Ry-0)
-- [Storybook](https://main--68700d12fd56a60965c0891e.chromatic.com)
+[Guia do evento](https://efficient-sloth-d85.notion.site/NLW-Agents-Guia-do-evento-21b395da57708061b24cc1aa48c0fb3a)
 
 ## Começando
 
@@ -23,11 +31,11 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 
 ## Scripts disponíveis
 
-| Script                       | Descrição                            |
-| :--------------------------- | :----------------------------------- |
-| `npm run dev`                | Inicia o servidor de desenvolvimento |
-| `npx tsc`                    | Validação de TypeScript              |
-| `npm run test-storybook`     | Executa os testes unitários          |
+| Script                   | Descrição                            |
+| :----------------------- | :----------------------------------- |
+| `npm run dev`            | Inicia o servidor de desenvolvimento |
+| `npx tsc`                | Validação de TypeScript              |
+| `npm run test-storybook` | Executa os testes unitários          |
 
 ## Tecnologias Utilizadas
 
@@ -47,3 +55,4 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 - **Ultracite:** Configurações predefinidas para o Biome.
 - **Vite:** Um servidor de desenvolvimento rápido e ferramenta de construção.
 - **Zod:** Validação de esquemas.
+
