@@ -9,7 +9,7 @@ interface FieldProps extends ComponentProps<'input'> {
 }
 
 const field = tv({
-	base: 'leading-normal bg-white rounded-lg border text-zinc-800 px-4 w-full transition focus:outline-none focus:border-zinc-800 disabled:cursor-not-allowed disabled:opacity-85',
+	base: 'leading-normal bg-white rounded-lg border text-zinc-800 px-4 w-full transition focus:outline-none focus:border-theme-primary-500 disabled:cursor-not-allowed disabled:opacity-85',
 	variants: {
 		errorMessage: {
 			true: 'border-red-700',
