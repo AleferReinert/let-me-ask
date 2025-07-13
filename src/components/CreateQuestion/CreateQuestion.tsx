@@ -41,25 +41,21 @@ export function CreateQuestion({ roomId }: CreateQuestionProps) {
 	}
 
 	return (
-		<form onSubmit={handleCreateQuestion} className='max-w-xs mx-auto my-10'>
+		<form onSubmit={handleCreateQuestion} className=' mx-auto my-10'>
 			<div className='space-y-4'>
-				<div>
-					<h3 className='font-heading text-lg'>Fazer uma pergunta</h3>
-					<p className='text-zinc-500'>Receba uma resposta gerada por IA</p>
-				</div>
 				<Field
-					label='Sua pergunta'
+					label='O que voce gostaria de saber?'
 					name='question'
 					onChange={e => setQuestion(e.target.value)}
 					value={question}
 					as='textarea'
 					required
-					placeholder='O que você gostaria de saber?'
+					placeholder='Faça uma pergunta e receba uma resposta gerada por IA...'
 					errorMessage={errors}
 					disabled={isPending}
 				/>
 				{alertError && <Alert variant='error'>{alertError}</Alert>}
-				<Button className='w-full' disabled={isPending}>
+				<Button className='w-full sm:w-auto ml-auto' disabled={isPending}>
 					{isPending ? 'Enviando...' : 'Enviar pergunta'}
 				</Button>
 			</div>

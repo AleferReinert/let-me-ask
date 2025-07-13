@@ -27,7 +27,7 @@ export function Field({ label, name, required, errorMessage, as = 'input', ...re
 
 	return (
 		<div data-testid='FieldComponent' className='leading-0'>
-			<label htmlFor={name} className='cursor-pointer pb-1 font-medium text-sm block'>
+			<label htmlFor={name} className='cursor-pointer pb-1 font-medium text-base block'>
 				{label} {required && <span className='text-red-700'>*</span>}
 			</label>
 
