@@ -15,7 +15,7 @@ const button = tv({
 	variants: {
 		size: {
 			default: 'h-12 px-4',
-			small: 'h-10 px-3 text-sm'
+			small: 'h-9 px-2 text-xs'
 		}
 	}
 })
