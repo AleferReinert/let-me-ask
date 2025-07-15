@@ -1,22 +1,27 @@
+import { GoogleOAuthProvider } from '@react-oauth/google'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import './globals.css'
-import { CreateRoomPage } from './pages/create-room'
-import { RecordRoomAudioPage } from './pages/record-room-audio'
+import { LoginPage } from './pages/login'
+import { RecordPage } from './pages/record'
 import { RoomPage } from './pages/room'
+import { RoomsPage } from './pages/rooms'
 
 const queryClient = new QueryClient()
 
 export function App() {
 	return (
 		<QueryClientProvider client={queryClient}>
-			<BrowserRouter>
-				<Routes>
-					<Route element={<CreateRoomPage />} index />
-					<Route element={<RoomPage />} path='/room/:roomId' />
-					<Route element={<RecordRoomAudioPage />} path='/room/:roomId/audio' />
-				</Routes>
-			</BrowserRouter>
+			<GoogleOAuthProvider clientId={import.meta.env.VITE_GOOGLE_CLIENT_ID}>
+				<BrowserRouter>
+					<Routes>
+						<Route element={<LoginPage />} index />
+						<Route element={<RoomsPage />} path='/rooms' />
+						<Route element={<RoomPage />} path='/room/:roomId' />
+						<Route element={<RecordPage />} path='/room/:roomId/record' />
+					</Routes>
+				</BrowserRouter>
+			</GoogleOAuthProvider>
 		</QueryClientProvider>
 	)
 }

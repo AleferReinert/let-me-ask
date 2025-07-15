@@ -4,15 +4,21 @@ import { Button } from '../components/Button/Button'
 import { GoBackLink } from '../components/GoBackLink/GoBackLink'
 import { Layout } from '../components/Layout/Layout'
 import { PageHeader } from '../components/PageHeader/PageHeader'
+import { useAuth } from '../http/useAuth'
 import { useRecorder } from '../http/useRecorder'
 import { useRoom } from '../http/useRoom'
 
 const isRecordSupportedByBrowser = !!navigator.mediaDevices && typeof window.MediaRecorder === 'function'
 
-export function RecordRoomAudioPage() {
+export function RecordPage() {
 	const { roomId } = useParams()
 	const room = useRoom(roomId)
 	const { alertError, isRecording, startRecording, stopRecording, status } = useRecorder()
+	const { isAuthenticated } = useAuth()
+
+	if (!isAuthenticated) {
+		return <Navigate replace to='/' />
+	}
 
 	if (!(roomId && room)) {
 		return <Navigate replace to='/' />

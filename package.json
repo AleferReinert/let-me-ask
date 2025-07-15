@@ -14,6 +14,7 @@
 		"chromatic": "npx chromatic --project-token=chpt_0b2a75be4150a80"
 	},
 	"dependencies": {
+		"@react-oauth/google": "^0.12.2",
 		"@tailwindcss/vite": "^4.1.11",
 		"@tanstack/react-query": "^5.81.5",
 		"dayjs": "^1.11.13",
@@ -53,4 +54,3 @@
 		]
 	}
 }
-

@@ -1,16 +1,38 @@
-import { Link } from 'react-router-dom'
+import { googleLogout } from '@react-oauth/google'
+import { Link, useNavigate } from 'react-router-dom'
+import { useUser } from '../../http/useUser'
+import { Button } from '../Button/Button'
 import { Container } from '../Container/Container'
 
 export function Header() {
-  return (
-    <header className="py-4 border-b border-neutral-200 bg-white">
-      <Container>
-        <h1>
-          <Link to="/" className="focus:outline-none">
-            <img alt="Let Me Ask" src="/logo.svg" width="100.26" height="45" />
-          </Link>
-        </h1>
-      </Container>
-    </header>
-  )
+	const userId = localStorage.getItem('userId')
+	const user = useUser(userId ?? undefined)
+	const navigate = useNavigate()
+
+	function logout() {
+		googleLogout()
+		localStorage.removeItem('token')
+		localStorage.removeItem('userId')
+		navigate('/')
+	}
+
+	return (
+		<header className='py-4 border-b border-neutral-200 bg-white'>
+			<Container className='flex justify-between items-center'>
+				<h1>
+					<Link to='/rooms' className='focus:outline-none'>
+						<img alt='Let Me Ask' src='/logo.svg' width='100.26' height='45' />
+					</Link>
+				</h1>
+
+				<div className='flex gap-4 items-center'>
+					{user && <div>Olá, {user.givenName}!</div>}
+
+					<Button size='small' onClick={logout} variant='outline'>
+						Logout
+					</Button>
+				</div>
+			</Container>
+		</header>
+	)
 }

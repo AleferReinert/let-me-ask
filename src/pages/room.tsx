@@ -7,11 +7,17 @@ import { GoBackLink } from '../components/GoBackLink/GoBackLink'
 import { Layout } from '../components/Layout/Layout'
 import { PageHeader } from '../components/PageHeader/PageHeader'
 import { QuestionList } from '../components/QuestionList/QuestionList'
+import { useAuth } from '../http/useAuth'
 import { useRoom } from '../http/useRoom'
 
 export function RoomPage() {
 	const { roomId } = useParams()
 	const room = useRoom(roomId)
+	const { isAuthenticated } = useAuth()
+
+	if (!isAuthenticated) {
+		return <Navigate replace to='/' />
+	}
 
 	if (!(roomId && room)) {
 		return <Navigate replace to='/' />
@@ -32,7 +38,7 @@ export function RoomPage() {
 				<Button
 					as='link'
 					size='small'
-					to={`/room/${roomId}/audio`}
+					to={`/room/${roomId}/record`}
 					className='w-full sm:w-auto focus:outline-none ml-auto'
 				>
 					<VscRecord className='size-4 transition' aria-hidden />

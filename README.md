@@ -46,6 +46,7 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 - **Mock Service Worker:** Biblioteca para simulação de API.
 - **React:** Biblioteca para criação de interfaces de usuário.
 - **React Icons:** SVG's de pacotes de ícones populares.
+- **React OAuth2 | Google:** Autenticação com o Google.
 - **React Query:** Biblioteca para gerenciamento de estado assíncrono.
 - **Storybook:** Ambiente para desenvolvimento de componentes isolados.
 - **Storybook Test Runner:** Transforma os stories em testes executáveis.
@@ -54,5 +55,5 @@ Projeto desenvolvido durante o NLW Agents da [Rocketseat](https://github.com/Roc
 - **TypeScript:** Superset de JavaScript com tipagem estática.
 - **Ultracite:** Configurações predefinidas para o Biome.
 - **Vite:** Um servidor de desenvolvimento rápido e ferramenta de construção.
-- **Zod:** Validação de esquemas.
+- **Zod:** Ferramenta para validação.
 

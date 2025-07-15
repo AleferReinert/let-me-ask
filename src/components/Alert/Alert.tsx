@@ -7,7 +7,7 @@ export interface AlertProps extends ComponentProps<'div'> {
 }
 
 const alert = tv({
-	base: 'flex p-4 rounded-lg',
+	base: 'flex gap-3 items-center p-4 rounded-lg',
 	variants: {
 		variant: {
 			error: 'text-red-900 bg-red-100',

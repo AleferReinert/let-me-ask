@@ -25,8 +25,8 @@ export const Default: Story = {
 			expect(button).toHaveTextContent('Default button')
 		})
 
-		await step('Default sizes', () => {
-			expect(button).toHaveClass('h-12 px-4')
+		await step('Default styles', () => {
+			expect(button).toHaveClass('h-12 px-4 bg-theme-primary-500 text-white')
 		})
 	}
 }
@@ -41,6 +41,20 @@ export const Small: Story = {
 
 		await step('Small sizes', () => {
 			expect(button).toHaveClass('h-9 px-2 text-xs')
+		})
+	}
+}
+
+export const Outline: Story = {
+	args: {
+		children: 'Outline button',
+		variant: 'outline'
+	},
+	play: async ({ canvas, step }) => {
+		const button = canvas.getByRole('button')
+
+		await step('Outline styles', () => {
+			expect(button).toHaveClass('text-theme-primary-600 border border-theme-primary-600')
 		})
 	}
 }
