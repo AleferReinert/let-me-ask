@@ -12,14 +12,18 @@ import { useRoom } from '../http/useRoom'
 
 export function RoomPage() {
 	const { roomId } = useParams()
-	const room = useRoom(roomId)
+	const { data: room, isLoading } = useRoom(roomId)
 	const { isAuthenticated } = useAuth()
+
+	if (!roomId || isLoading) {
+		return
+	}
 
 	if (!isAuthenticated) {
 		return <Navigate replace to='/' />
 	}
 
-	if (!(roomId && room)) {
+	if (!room) {
 		return <Navigate replace to='/' />
 	}
 

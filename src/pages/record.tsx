@@ -12,15 +12,19 @@ const isRecordSupportedByBrowser = !!navigator.mediaDevices && typeof window.Med
 
 export function RecordPage() {
 	const { roomId } = useParams()
-	const room = useRoom(roomId)
+	const { data: room, isLoading } = useRoom(roomId)
 	const { alertError, isRecording, startRecording, stopRecording, status } = useRecorder()
 	const { isAuthenticated } = useAuth()
+
+	if (!roomId || isLoading) {
+		return
+	}
 
 	if (!isAuthenticated) {
 		return <Navigate replace to='/' />
 	}
 
-	if (!(roomId && room)) {
+	if (!room) {
 		return <Navigate replace to='/' />
 	}
 
