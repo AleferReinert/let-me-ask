@@ -15,6 +15,7 @@ export function useUser(id?: string) {
 		queryFn: async () => {
 			const response = await fetch(`${import.meta.env.VITE_API_URL}/users/${id}`)
 			return response.json()
+			console.log('response: ', response)
 		},
 		enabled: Boolean(id)
 	})

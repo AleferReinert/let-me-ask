@@ -9,6 +9,8 @@ export function Header() {
 	const user = useUser(userId ?? undefined)
 	const navigate = useNavigate()
 
+	console.log('user: ', user)
+
 	function logout() {
 		googleLogout()
 		localStorage.removeItem('token')
