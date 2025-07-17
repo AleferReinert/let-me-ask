@@ -13,16 +13,13 @@ interface CreateUserResponse {
 	id: string
 }
 
-export function useCreateUser(id?: string) {
+export function useCreateUser() {
 	const queryClient = useQueryClient()
 
 	return useMutation({
-		mutationKey: id ? ['create-user', id] : ['create-user'],
+		mutationKey: ['create-user'],
 		mutationFn: async (data: CreateUserRequest) => {
-			if (!id) {
-				return
-			}
-			const url = `${import.meta.env.VITE_API_URL}/users/${id}`
+			const url = `${import.meta.env.VITE_API_URL}/users/${data.id}`
 			const response = await fetch(url, {
 				method: 'POST',
 				headers: {

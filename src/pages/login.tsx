@@ -23,7 +23,7 @@ export function LoginPage() {
 	const navigate = useNavigate()
 	const [isLogged, setIsLogged] = useState(false)
 	const [error, setError] = useState('')
-	const { mutateAsync: createUser } = useCreateUser(profile?.id)
+	const { mutateAsync: createUser } = useCreateUser()
 	const { isAuthenticated } = useAuth()
 
 	const login = useGoogleLogin({
