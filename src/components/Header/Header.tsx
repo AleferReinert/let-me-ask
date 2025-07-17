@@ -6,8 +6,12 @@ import { Container } from '../Container/Container'
 
 export function Header() {
 	const userId = localStorage.getItem('userId')
-	const user = useUser(userId ?? undefined)
+	const { data: user, isLoading } = useUser(userId ?? undefined)
 	const navigate = useNavigate()
+
+	if (isLoading) {
+		return null
+	}
 
 	console.log('user: ', user)
 

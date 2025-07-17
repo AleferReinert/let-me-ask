@@ -10,15 +10,18 @@ interface UserProps {
 }
 
 export function useUser(id?: string) {
-	const { data } = useQuery<UserProps[]>({
+	const { data, isLoading } = useQuery<UserProps[]>({
 		queryKey: ['get-user', id],
 		queryFn: async () => {
 			const response = await fetch(`${import.meta.env.VITE_API_URL}/users/${id}`)
-			return response.json()
 			console.log('response: ', response)
+			if (!response.ok) {
+				throw new Error('Error fetching user')
+			}
+			return response.json()
 		},
 		enabled: Boolean(id)
 	})
 
-	return data ? data[0] : undefined
+	return { data: data ? data[0] : undefined, isLoading }
 }
