@@ -9,7 +9,7 @@ export function Header() {
 	const { data: user, isLoading } = useUser()
 	const navigate = useNavigate()
 
-	if (!userId || isLoading || !user) {
+	if (isLoading) {
 		return null
 	}
 

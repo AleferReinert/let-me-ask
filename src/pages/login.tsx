@@ -30,6 +30,7 @@ export function LoginPage() {
 		onSuccess: codeResponse => {
 			setUser(codeResponse)
 			setIsLogged(true)
+			console.log('codeResponse: ', codeResponse)
 		},
 		onError: () => {
 			setError('Não foi possível fazer o login. Tente novamente.')
@@ -39,28 +40,31 @@ export function LoginPage() {
 	// biome-ignore lint/correctness/useExhaustiveDependencies: unucessary
 	useEffect(() => {
 		if (profile) {
-			;(async () => {
-				try {
-					await createUser({
-						id: profile.id,
-						name: profile.name,
-						givenName: profile.given_name,
-						familyName: profile.family_name,
-						email: profile.email,
-						picture: profile.picture
-					})
+			try {
+				createUser({
+					id: profile.id,
+					name: profile.name,
+					givenName: profile.given_name,
+					familyName: profile.family_name,
+					email: profile.email,
+					picture: profile.picture
+				})
 
+				setTimeout(() => {
 					navigate('/rooms')
-				} catch {
-					setError('Não foi possível criar o usuário. Tente novamente.')
-				}
-			})()
+				}, 1200)
+			} catch {
+				setError('Não foi possível criar o usuário. Tente novamente.')
+			}
 		}
 	}, [profile])
 
 	useEffect(() => {
+		console.log('entrou no useEffect')
 		if (user) {
+			console.log('user: ', user)
 			localStorage.setItem('token', user.access_token)
+			console.log('acess token: ', localStorage.getItem('token'))
 			const getUserData = async () => {
 				const response = await fetch(
 					`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
@@ -72,13 +76,16 @@ export function LoginPage() {
 					}
 				)
 				const result: GoogleProfileProps = await response.json()
+				console.log('result1: ', result)
 				localStorage.setItem('userId', result.id)
 				setProfile(result)
 			}
 
 			try {
 				getUserData()
+				console.log('try getUserData')
 			} catch {
+				console.log('catch getUserData')
 				setError('Não foi possível criar o usuário. ')
 			}
 		}
