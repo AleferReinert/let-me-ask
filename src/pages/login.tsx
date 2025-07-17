@@ -39,22 +39,22 @@ export function LoginPage() {
 	// biome-ignore lint/correctness/useExhaustiveDependencies: unucessary
 	useEffect(() => {
 		if (profile) {
-			try {
-				createUser({
-					id: profile.id,
-					name: profile.name,
-					givenName: profile.given_name,
-					familyName: profile.family_name,
-					email: profile.email,
-					picture: profile.picture
-				})
+			;(async () => {
+				try {
+					await createUser({
+						id: profile.id,
+						name: profile.name,
+						givenName: profile.given_name,
+						familyName: profile.family_name,
+						email: profile.email,
+						picture: profile.picture
+					})
 
-				setTimeout(() => {
 					navigate('/rooms')
-				}, 1200)
-			} catch {
-				setError('Não foi possível criar o usuário. Tente novamente.')
-			}
+				} catch {
+					setError('Não foi possível criar o usuário. Tente novamente.')
+				}
+			})()
 		}
 	}, [profile])
 
@@ -62,13 +62,16 @@ export function LoginPage() {
 		if (user) {
 			localStorage.setItem('token', user.access_token)
 			const getUserData = async () => {
-				const response = fetch(`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`, {
-					headers: {
-						Authorization: `Bearer ${user.access_token}`,
-						Accept: 'application/json'
+				const response = await fetch(
+					`https://www.googleapis.com/oauth2/v1/userinfo?access_token=${user.access_token}`,
+					{
+						headers: {
+							Authorization: `Bearer ${user.access_token}`,
+							Accept: 'application/json'
+						}
 					}
-				})
-				const result: GoogleProfileProps = await response.then(res => res.json())
+				)
+				const result: GoogleProfileProps = await response.json()
 				localStorage.setItem('userId', result.id)
 				setProfile(result)
 			}
