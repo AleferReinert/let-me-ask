@@ -6,10 +6,10 @@ import { Container } from '../Container/Container'
 
 export function Header() {
 	const userId = localStorage.getItem('userId')
-	const { data: user, isLoading } = useUser(userId ?? undefined)
+	const { data: user, isLoading } = useUser()
 	const navigate = useNavigate()
 
-	if (isLoading) {
+	if (!userId || isLoading || !user) {
 		return null
 	}
 
