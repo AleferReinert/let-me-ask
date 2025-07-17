@@ -25,7 +25,10 @@ export function useCreateUser(id?: string) {
 			const url = `${import.meta.env.VITE_API_URL}/users/${id}`
 			const response = await fetch(url, {
 				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
+				headers: {
+					'Content-Type': 'application/json',
+					'Cross-Origin-Embedder-Policy': 'unsafe-none'
+				},
 				body: JSON.stringify(data)
 			})
 
