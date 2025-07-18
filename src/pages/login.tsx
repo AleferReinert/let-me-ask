@@ -91,7 +91,15 @@ export function LoginPage() {
 	return (
 		<div className='lg:grid lg:grid-cols-2 h-screen'>
 			<div className='hidden lg:flex flex-col gap-4 justify-center bg-theme-primary-500 px-16 py-20'>
-				<img src='/illustration.png' alt='' aria-hidden width='313' height='404' className='w-52 2xl:w-[313px]' />
+				<img
+					src='/illustration.webp'
+					fetchPriority='high'
+					alt=''
+					aria-hidden
+					width='313'
+					height='404'
+					className='w-52 2xl:w-[313px]'
+				/>
 				<h2 className='text-white font-heading text-4xl'>Toda pergunta tem uma resposta</h2>
 				<p className='text-white text-xl'>Aprenda e compartilhe conhecimento com outras pessoas</p>
 			</div>
