@@ -12,8 +12,6 @@ export function Header() {
 		return null
 	}
 
-	console.log('user: ', user)
-
 	function logout() {
 		googleLogout()
 		localStorage.removeItem('token')

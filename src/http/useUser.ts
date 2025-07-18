@@ -15,7 +15,6 @@ export function useUser() {
 		queryKey: ['get-user', userId],
 		queryFn: async () => {
 			const response = await fetch(`${import.meta.env.VITE_API_URL}/users/${userId}`)
-			console.log('response: ', response)
 			if (!response.ok) {
 				throw new Error('Error fetching user')
 			}

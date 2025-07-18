@@ -1,2 +1,2 @@
-npx tsc --build
-npm run test-storybook
+npx tsc --build && npm run test-storybook
+
