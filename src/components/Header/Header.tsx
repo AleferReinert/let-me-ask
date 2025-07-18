@@ -5,7 +5,6 @@ import { Button } from '../Button/Button'
 import { Container } from '../Container/Container'
 
 export function Header() {
-	const userId = localStorage.getItem('userId')
 	const { data: user, isLoading } = useUser()
 	const navigate = useNavigate()
 

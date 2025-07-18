@@ -19,7 +19,7 @@ export function useCreateUser() {
 	return useMutation({
 		mutationKey: ['create-user'],
 		mutationFn: async (data: CreateUserRequest) => {
-			const url = `${import.meta.env.VITE_API_URL}/users/${data.id}`
+			const url = `${import.meta.env.VITE_API_URL}/users`
 			const response = await fetch(url, {
 				method: 'POST',
 				headers: {
